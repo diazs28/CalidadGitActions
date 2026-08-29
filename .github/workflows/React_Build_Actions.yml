@@ -2,11 +2,11 @@ name: React vite CI
 
 on:
   push:
-    branch:
+    branches:
       - main
   pull_request:
-    branch:
-      - main
+    branches:
+    - main
 
 jobs:
   build:
@@ -15,13 +15,13 @@ jobs:
     steps:
       - name: descargar codigo
         uses: actions/checkout@v4
-        
+      
       - name: Use Node.js 20
         uses: actions/setup-node@v4
         with:
-        node-version: 20
-      - name: Install dependencies
-        run: npm CI
-
-      - name: Build
+          node-version: 20
+      - name: Instalar dependecias
+        run: npm install
+      
+      - name: contruir la aplicacion de js
         run: npm run build
